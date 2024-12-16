@@ -9,6 +9,12 @@ COPY pom.xml .
 COPY java ./java
 
 # Build the application
+ARG DB_HOST
+ARG DB_PORT
+ARG DB_NAME
+ARG DB_USER
+ARG DB_PASSWORD
+ARG API_PORT
 # environment variables required:
 # MONEY_TRACKER.API.PORT
 # MONEY_TRACKER.DB.HOST
@@ -17,9 +23,9 @@ COPY java ./java
 # MONEY_TRACKER.DB.USER
 # MONEY_TRACKER.DB.PASSWORD
 RUN env
-RUN echo "db: ${MONEY_TRACKER.DB.HOST}:${MONEY_TRACKER.DB.PORT}/${MONEY_TRACKER.DB.NAME}"
-RUN echo "db user: ${MONEY_TRACKER.DB.USER}"
-RUN echo "api port: ${MONEY_TRACKER.API.PORT}"
+RUN echo "db: ${DB_HOST}:${DB_PORT}/${DB_NAME}"
+RUN echo "db user: ${DB_USER}"
+RUN echo "api port: ${API_PORT}"
 RUN mvn clean package
 
 # Use a smaller image for the final application
@@ -35,7 +41,7 @@ COPY --from=build /app/target/money-tracker-1.0.0.jar /app/money-tracker.jar
 COPY config/config.yml ./config.yml
 
 # Expose port for the application
-EXPOSE ${MONEY_TRACKER.API.PORT}
+EXPOSE ${API_PORT}
 
 # Set the entrypoint
 ENTRYPOINT ["java", "-jar", "/app/money-tracker.jar", "server", "/app/config.yml"]
