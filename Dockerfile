@@ -16,6 +16,9 @@ COPY java ./java
 # MONEY_TRACKER.DB.NAME
 # MONEY_TRACKER.DB.USER
 # MONEY_TRACKER.DB.PASSWORD
+RUN echo "db: ${MONEY_TRACKER.DB.HOST}:${MONEY_TRACKER.DB.PORT}/${MONEY_TRACKER.DB.NAME}"
+RUN echo "db user: ${MONEY_TRACKER.DB.USER}"
+RUN echo "api port: ${MONEY_TRACKER.API.PORT}"
 RUN mvn clean package
 
 # Use a smaller image for the final application

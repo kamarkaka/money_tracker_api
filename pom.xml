@@ -34,9 +34,9 @@
 
                     <jdbc>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://${env.MONEY_TRACKER.DB.HOST}:${env.MONEY_TRACKER.DB.PORT}/${env.MONEY_TRACKER.DB.NAME}</url>
-                        <user>${env.MONEY_TRACKER.DB.USER}</user>
-                        <password>${env.MONEY_TRACKER.DB.PASSWORD}</password>
+                        <url>jdbc:postgresql://${MONEY_TRACKER.DB.HOST}:${MONEY_TRACKER.DB.PORT}/${MONEY_TRACKER.DB.NAME}</url>
+                        <user>${MONEY_TRACKER.DB.USER}</user>
+                        <password>${MONEY_TRACKER.DB.PASSWORD}</password>
                     </jdbc>
 
                     <generator>
