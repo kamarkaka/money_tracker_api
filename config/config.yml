@@ -1,10 +1,10 @@
 server:
   applicationConnectors:
     - type: http
-      port: ${MONEY_TRACKER.API.PORT}
+      port: ${API_PORT}
 
 database:
-  url: jdbc:postgresql://${MONEY_TRACKER.DB.HOST}:${MONEY_TRACKER.DB.PORT}/
-  name: ${MONEY_TRACKER.DB.NAME}
-  user: ${MONEY_TRACKER.DB.USER}
-  password: ${MONEY_TRACKER.DB.PASSWORD}
+  url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/
+  name: ${DB_NAME}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
