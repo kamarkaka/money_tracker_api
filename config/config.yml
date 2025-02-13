@@ -1,7 +1,10 @@
 server:
   applicationConnectors:
-    - type: http
+    - type: https
       port: ${API_PORT}
+      keyStorePath: ${KEYSTORE_PATH}
+      keyStorePassword: ${KEYSTORE_PASSWORD}
+      keyStoreType: JKS
 
 database:
   url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/
