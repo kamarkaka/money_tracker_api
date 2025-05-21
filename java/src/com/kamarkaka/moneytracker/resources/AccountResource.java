@@ -12,7 +12,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.Optional;
 
-@Path("/accounts")
+@Path("/api/accounts")
 @Produces(MediaType.APPLICATION_JSON)
 public class AccountResource {
     private final AccountDAO accountDAO;
