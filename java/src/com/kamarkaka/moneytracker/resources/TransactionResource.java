@@ -41,7 +41,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Path("/transactions")
+@Path("/api/transactions")
 @Produces(MediaType.APPLICATION_JSON)
 public class TransactionResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionResource.class);
