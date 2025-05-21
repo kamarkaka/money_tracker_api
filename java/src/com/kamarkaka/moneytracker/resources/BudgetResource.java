@@ -12,7 +12,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.Optional;
 
-@Path("/budgets")
+@Path("/api/budgets")
 @Produces(MediaType.APPLICATION_JSON)
 public class BudgetResource {
     private final BudgetDAO budgetDAO;
