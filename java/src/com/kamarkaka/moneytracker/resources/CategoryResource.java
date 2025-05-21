@@ -12,7 +12,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.Optional;
 
-@Path("/categories")
+@Path("/api/categories")
 @Produces(MediaType.APPLICATION_JSON)
 public class CategoryResource {
     private final CategoryDAO categoryDAO;
