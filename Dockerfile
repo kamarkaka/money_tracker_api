@@ -24,4 +24,4 @@ COPY --from=build /app/target/money-tracker-1.0.0.jar /app/money-tracker.jar
 EXPOSE ${API_PORT}
 
 # Set the entrypoint
-ENTRYPOINT ["java", "-jar", "/app/money-tracker.jar", "server", "/app/config.yml"]
+ENTRYPOINT ["java", "-jar", "/app/money-tracker.jar", "server", "/app/config/config.yml"]
