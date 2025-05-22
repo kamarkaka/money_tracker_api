@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy the Maven project files
 COPY pom.xml .
 COPY java ./java
+COPY sql ./sql
 
 RUN mvn clean package
 
