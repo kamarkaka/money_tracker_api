@@ -8,17 +8,6 @@ WORKDIR /app
 COPY pom.xml .
 COPY java ./java
 
-# Build the application
-ARG DB_HOST
-ARG DB_PORT
-ARG DB_NAME
-ARG DB_USER
-ARG DB_PASSWORD
-ARG API_PORT
-
-RUN echo "db: ${DB_HOST}:${DB_PORT}/${DB_NAME}"
-RUN echo "db user: ${DB_USER}"
-RUN echo "api port: ${API_PORT}"
 RUN mvn clean package
 
 # Use a smaller image for the final application
@@ -29,9 +18,6 @@ WORKDIR /app
 
 # Copy the built jar from the build stage
 COPY --from=build /app/target/money-tracker-1.0.0.jar /app/money-tracker.jar
-
-# Copy the config
-COPY config/config.yml ./config.yml
 
 # Expose port for the application
 EXPOSE ${API_PORT}
